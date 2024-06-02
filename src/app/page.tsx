@@ -34,14 +34,10 @@ export default function Home() {
               <div className="hero-animation-ring-container">
                 <div className="hero-animation-ring -inset-0 bg-slate-50/10"></div>
               </div>
-              <div className="pulse-border absolute inset-[-1px] rounded-2xl border border-white/[.04] bg-white/[.02] backdrop-blur-[3px]"></div>
-              <div className="bg-orange-glow-1 absolute left-[92px] top-[38px] rounded-[551px] opacity-50 blur-[60px]"></div>
-              <div className="bg-orange-glow-2 absolute right-[37px] top-[38px] rounded-[551px] opacity-50 blur-[60px]"></div>
-              <div className="absolute right-[1px] top-[127px] rounded-[38px] opacity-20 blur-[14px]"></div>
               <div className="relative z-10 overflow-hidden rounded-lg">
                 <img
                   src="/images/hero.png"
-                  alt="A screenshot of the Aether dashboard"
+                  alt="A screenshot of the shiro dashboard"
                   style={{ color: "transparent" }}
                 />
               </div>
