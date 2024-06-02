@@ -37,11 +37,12 @@ export default function Home() {
               </div>
               <div className="relative z-10 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/hero.png"
-                  alt="A screenshot of the shiro dashboard"
+                  src="/images/1st_day.gif"
+                  alt="1st day."
                   draggable="false"
-                  width={1232}
-                  height={700}
+                  width={1000}
+                  height={564}
+                  className="rounded-lg w-full h-full"
                 />
               </div>
             </div>
