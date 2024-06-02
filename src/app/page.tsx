@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import { Features } from "@/components/features"
@@ -35,10 +36,12 @@ export default function Home() {
                 <div className="hero-animation-ring -inset-0 bg-slate-50/10"></div>
               </div>
               <div className="relative z-10 overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/images/hero.png"
                   alt="A screenshot of the shiro dashboard"
-                  style={{ color: "transparent" }}
+                  draggable="false"
+                  width={1232}
+                  height={700}
                 />
               </div>
             </div>
