@@ -52,11 +52,11 @@ export default function FAQ() {
           to use the command
           <code
             onClick={() =>
-              navigator.clipboard.writeText("/account transfer amount: user:")
+              navigator.clipboard.writeText("/account transfer user: amount:")
             }
             className="ml-1 cursor-pointer text-blue-400 hover:underline"
           >
-            /account transfer amount: user:
+            /account transfer user: amount:
           </code>
           , replacing <code>amount</code> with the number of credits you want to
           transfer and <code>user</code> with the user ID of the person you want
