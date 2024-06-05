@@ -7,6 +7,6 @@ environment:
   GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
 tasks:
   - setup: |
-      echo 'cd <repo>' >> ~/.buildenv
+      echo 'cd shiro.rest' >> ~/.buildenv
   - mirror: |
       git push --force --mirror git@github.com:ignaigna/shiro.rest.git
