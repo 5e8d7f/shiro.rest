@@ -7,11 +7,11 @@ export const siteConfig: SiteConfig = {
   author: "shiro",
   description:
     "A fast, efficient, and user-friendly Discord bot that offers a wide range of features to make your information gathering better.",
-  keywords: ["shiro"],
+  keywords: ["osint", "discord", "bot", "information", "security", "hacking"],
   url: env.NEXT_PUBLIC_APP_URL,
   links: {
     discordBot:
-      "https://discord.com/oauth2/authorize?client_id=1235003656248627210&permissions=274878220352&response_type=code&redirect_uri=https%3A%2F%2Fshiro.rest%2Fsuccess&integration_type=1&scope=identify+applications.commands+bot",
+      "https://discord.com/oauth2/authorize?client_id=1235003656248627210&permissions=274878220352&response_type=code&redirect_uri=https%3A%2F%2Fshiro.rest%2Fsuccess&integration_type=0&scope=identify+applications.commands+bot",
     discordUser:
       "https://discord.com/oauth2/authorize?client_id=1235003656248627210&response_type=code&redirect_uri=https%3A%2F%2Fshiro.rest%2Fsuccess&integration_type=1&scope=identify+applications.commands",
     telegramBot: "https://t.me/shiro_bot",

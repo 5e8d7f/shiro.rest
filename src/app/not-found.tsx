@@ -6,7 +6,7 @@ import { Icons } from "@/components/icons"
 
 export default function Authorized() {
   return (
-    <main className="animate-fade-in relative flex h-screen flex-col items-center justify-center pb-8 pt-6 text-center md:py-24 lg:py-16">
+    <main className="relative flex h-screen animate-fade-in flex-col items-center justify-center pb-8 pt-6 text-center md:py-24 lg:py-16">
       <DotPattern className="absolute left-0 top-0 z-0" />
       <h1 className="py-8 text-3xl font-bold md:text-4xl lg:text-5xl">
         404 | Not Found

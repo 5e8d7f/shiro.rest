@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="min-h-[80vh]">
       <Navbar />
-      <section className="animate-fade-in flex-grow space-y-6 pb-8 pt-6 md:py-24 lg:py-16">
+      <section className="flex-grow animate-fade-in space-y-6 pb-8 pt-6 md:py-24 lg:py-16">
         <div className="container flex max-w-[64rem] flex-col items-start gap-2 text-start md:items-center md:text-center">
           <Link
             className="flex flex-row items-center rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-muted/75"
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </section>
       <section
-        className="animate-fade-in container space-y-6 py-8 dark:bg-transparent md:py-12 lg:py-24"
+        className="container animate-fade-in space-y-6 py-8 dark:bg-transparent md:py-12 lg:py-24"
         id="features"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-start text-start md:items-center md:space-y-4 md:text-center">
@@ -65,7 +65,7 @@ export default function Home() {
         <Features />
       </section>
       <section
-        className="animate-fade-in container flex flex-col gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24"
+        className="container flex animate-fade-in flex-col gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24"
         id="pricing"
       >
         <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
