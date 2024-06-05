@@ -1,5 +1,6 @@
 "use client"
 
+import { siteConfig } from "@/config/site"
 import {
   Accordion,
   AccordionContent,
@@ -25,7 +26,7 @@ export default function FAQ() {
         <p>
           Feel free to contact me on Telegram at
           <a
-            href="https://t.me/YiordanoIgnacio"
+            href={siteConfig.links.telegramSupport}
             className="ml-1 mr-1 text-blue-400 hover:underline"
           >
             @YiordanoIgnacio

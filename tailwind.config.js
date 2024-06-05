@@ -71,11 +71,22 @@ module.exports = {
             "offset-distance": "100%",
           },
         },
+        "fade-in": {
+          "0%": {
+            transform: "translateY(50px)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "fade-in": "fade-in 1.25s cubic-bezier(0.35, 0.5, 0.65, 0.95) both",
       },
     },
   },

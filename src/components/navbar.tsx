@@ -26,12 +26,12 @@ export function Navbar() {
     {
       title: "Install for me",
       icon: <Icons.user className="h-6 w-6" />,
-      link: "https://discord.com/oauth2/authorize?client_id=1235003656248627210&response_type=code&redirect_uri=https://shiro.rest/success&integration_type=1&scope=applications.commands",
+      link: siteConfig.links.discordUser,
     },
     {
       title: "Install for my server",
       icon: <Icons.guild className="h-6 w-6" />,
-      link: "https://discord.com/oauth2/authorize?client_id=1235003656248627210&permissions=274878220288&response_type=code&redirect_uri=https%3A%2F%2Fshiro.rest%2Fsuccess&scope=applications.commands+bot",
+      link: siteConfig.links.discordBot,
     },
   ]
 

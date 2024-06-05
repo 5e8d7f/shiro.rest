@@ -1,6 +1,7 @@
 import { ElementType } from "react"
 import Link from "next/link"
 
+import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 
@@ -9,8 +10,8 @@ import { Icons } from "./icons"
 export function Footer() {
   const contact = [
     {
-      title: "telegram",
-      href: "https://t.me/YiordanoIgnacio", // TODO: buy this @
+      title: "Telegram",
+      href: siteConfig.links.telegramSupport,
       icon: Icons.contact,
     },
   ]

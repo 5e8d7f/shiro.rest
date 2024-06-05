@@ -10,7 +10,12 @@ export const siteConfig: SiteConfig = {
   keywords: ["shiro"],
   url: env.NEXT_PUBLIC_APP_URL,
   links: {
-    github: "https://github.com/rxnk/next-boilerplate",
+    discordBot:
+      "https://discord.com/oauth2/authorize?client_id=1235003656248627210&permissions=274878220352&response_type=code&redirect_uri=https%3A%2F%2Fshiro.rest%2Fsuccess&integration_type=1&scope=identify+applications.commands+bot",
+    discordUser:
+      "https://discord.com/oauth2/authorize?client_id=1235003656248627210&response_type=code&redirect_uri=https%3A%2F%2Fshiro.rest%2Fsuccess&integration_type=1&scope=identify+applications.commands",
+    telegramBot: "https://t.me/shiro_bot",
+    telegramSupport: "https://t.me/YiordanoIgnacio",
   },
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
 }

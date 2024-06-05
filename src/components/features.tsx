@@ -1,4 +1,9 @@
-import { MagicCard, MagicContainer } from "@/components/ui/magic-card"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 
 export function Features() {
@@ -26,25 +31,24 @@ export function Features() {
   ]
 
   return (
-    <MagicContainer className="mx-auto grid justify-center gap-4 md:max-w-[64rem] md:grid-cols-2">
+    <div className="mx-auto grid justify-center gap-4 md:max-w-[64rem] md:grid-cols-2">
       {cardData.map((card) => (
-        <MagicCard
+        <Card
           key={card.title}
-          className="relative col-span-1 overflow-hidden border bg-card p-2 text-card-foreground shadow-sm"
+          className="relative col-span-1 overflow-hidden p-2"
+          id="card"
         >
           <div className="flex h-[150px] flex-col justify-between rounded-md p-6">
             <div className="flex flex-row items-center -space-x-4">
               {card.icon}
             </div>
-            <div className="flex flex-col">
-              <h3 className="font-bold">{card.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {card.description}
-              </p>
-            </div>
+            <CardHeader>
+              <CardTitle>{card.title}</CardTitle>
+              <CardDescription>{card.description}</CardDescription>
+            </CardHeader>
           </div>
-        </MagicCard>
+        </Card>
       ))}
-    </MagicContainer>
+    </div>
   )
 }

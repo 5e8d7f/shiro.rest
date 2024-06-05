@@ -5,7 +5,10 @@ export type SiteConfig = {
   keywords: Array<string>
   url: string
   links: {
-    github: string
+    discordBot: string
+    discordUser: string
+    telegramBot: string
+    telegramSupport: string
   }
   ogImage: string
 }
