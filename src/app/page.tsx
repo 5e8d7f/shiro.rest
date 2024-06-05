@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { BorderBeam } from "@/components/ui/border"
 import { Features } from "@/components/features"
+import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { Payment } from "@/components/payment"
 
@@ -32,17 +34,15 @@ export default function Home() {
                   "linear-gradient(to bottom, black 40%, transparent 70%)",
               }}
             >
-              <div className="hero-animation-ring-container">
-                <div className="hero-animation-ring -inset-0 bg-slate-50/10"></div>
-              </div>
-              <div className="relative z-10 overflow-hidden rounded-lg">
+              <BorderBeam colorFrom="#ffffff" colorTo="#ffffff" duration={5} />
+
+              <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 <Image
                   src="/images/1st_day.gif"
-                  alt="1st day."
-                  draggable="false"
-                  width={1000}
-                  height={564}
-                  className="rounded-lg w-full h-full"
+                  alt="1st day"
+                  width={1232}
+                  height={694}
+                  unoptimized
                 />
               </div>
             </div>
@@ -89,6 +89,7 @@ export default function Home() {
           <div className="mt-2 flex flex-row justify-center gap-2"></div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

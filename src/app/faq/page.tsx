@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Accordion,
   AccordionContent,
@@ -21,17 +23,21 @@ export default function FAQ() {
       question: "Where can I receive help?",
       answer: (
         <p>
-          If you have questions or need support regarding the bot and its
-          features, you can
+          Feel free to contact me on Telegram at
           <a
-            href="https://igna.one"
-            className="ml-1 text-blue-500 hover:underline"
+            href="https://t.me/YiordanoIgnacio"
+            className="ml-1 mr-1 text-blue-400 hover:underline"
           >
-            contact me
+            @YiordanoIgnacio
           </a>
-          .
+          with any questions or concerns you may have.
         </p>
       ),
+    },
+    {
+      question: "Can I trust shiro with my data?",
+      answer:
+        "Yes, we take your privacy and data security very seriously. We do not store any personal information about you.",
     },
     {
       question: "What payment methods do you accept?",
@@ -39,8 +45,24 @@ export default function FAQ() {
         "We accept most major cryptocurrencies, if you have any questions, please contact us.",
     },
     {
-      question: "Can I cancel my subscription at any time?",
-      answer: "Yes, you can cancel your subscription at any time.",
+      question: "Can I transfer my credits to another user?",
+      answer: (
+        <p>
+          Yes, you can transfer your credits to another user. To do so, you need
+          to use the command
+          <code
+            onClick={() =>
+              navigator.clipboard.writeText("/account transfer amount: user:")
+            }
+            className="ml-1 cursor-pointer text-blue-400 hover:underline"
+          >
+            /account transfer amount: user:
+          </code>
+          , replacing <code>amount</code> with the number of credits you want to
+          transfer and <code>user</code> with the user ID of the person you want
+          to transfer the credits to.
+        </p>
+      ),
     },
     {
       question: "Can I get a refund?",

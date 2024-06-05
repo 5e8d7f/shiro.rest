@@ -2,6 +2,7 @@ import { Discord } from "flowbite-react-icons/solid"
 import {
   ArrowLeft,
   CheckCheck,
+  Contact,
   Database,
   Mail,
   Moon,
@@ -11,7 +12,7 @@ import {
   Users,
 } from "lucide-react"
 
-export type IconKeys = keyof typeof icons
+type IconKeys = keyof typeof icons
 
 type IconsType = {
   [key in IconKeys]: React.ElementType
@@ -28,6 +29,7 @@ const icons = {
   mail: Mail,
   check: CheckCheck,
   barcode: ScanBarcode,
+  contact: Contact,
 }
 
 export const Icons: IconsType = icons
