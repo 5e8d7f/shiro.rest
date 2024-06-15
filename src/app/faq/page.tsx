@@ -29,7 +29,7 @@ export default function FAQ() {
             href={siteConfig.links.contact.telegram}
             className="ml-1 mr-1 text-blue-400 hover:underline"
           >
-            @YiordanoIgnacio
+            @{siteConfig.links.contact.telegram.replace("https://t.me/", "")}
           </a>
           with any questions or concerns you may have.
         </p>
