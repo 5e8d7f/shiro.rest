@@ -26,7 +26,7 @@ export default function FAQ() {
         <p>
           Feel free to contact me on Telegram at
           <a
-            href={siteConfig.links.telegram}
+            href={siteConfig.links.contact.telegram}
             className="ml-1 mr-1 text-blue-400 hover:underline"
           >
             @YiordanoIgnacio

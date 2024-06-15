@@ -18,7 +18,7 @@ export const siteConfig: SiteConfig = {
     contact: {
       telegram: "https://t.me/YiordanoIgnacio",
       discord: "https://discord.com/users/213743026026184704",
-    }
+    },
   },
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
 }

@@ -9,7 +9,7 @@ export type SiteConfig = {
     discordUser: string
     telegramBot: string
     contact: {
-      telegram: string,
+      telegram: string
       discord: string
     }
   }

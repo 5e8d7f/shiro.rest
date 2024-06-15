@@ -43,7 +43,6 @@ export default function Home() {
                   width={1232}
                   height={694}
                   unoptimized
-                  unselectable="on"
                 />
               </div>
             </div>

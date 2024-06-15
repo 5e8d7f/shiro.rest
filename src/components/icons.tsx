@@ -1,4 +1,5 @@
-import { FaDiscord, FaTelegram } from 'react-icons/fa'
+import { FaDiscord, FaTelegram } from "react-icons/fa"
+import { IoIosBarcode } from "react-icons/io"
 import {
   LuArrowLeft,
   LuCheck,
@@ -9,7 +10,6 @@ import {
   LuUser,
   LuUsers,
 } from "react-icons/lu"
-import { IoIosBarcode } from "react-icons/io";
 
 type IconKeys = keyof typeof icons
 
@@ -32,4 +32,3 @@ const icons = {
 }
 
 export const Icons: IconsType = icons
-
