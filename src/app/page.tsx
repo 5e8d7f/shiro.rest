@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { siteConfig } from "@/config/site"
 import { BorderBeam } from "@/components/ui/border"
 import { Features } from "@/components/features"
 import { Footer } from "@/components/footer"
@@ -17,14 +18,13 @@ export default function Home() {
             className="flex flex-row items-center rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-muted/75"
             href="#features"
           >
-            What&apos;s new?
+            Learn more
           </Link>
           <h1 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">
-            The next generation of Discord bots
+            A next-generation Discord bot.
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            A fast, efficient, and user-friendly Discord bot that offers a wide
-            range of features to make your information gathering better.
+            {siteConfig.description}
           </p>
           <div className="relative -mb-32 mt-16 hidden xl:col-span-7 xl:row-span-2 xl:block">
             <div
@@ -43,6 +43,7 @@ export default function Home() {
                   width={1232}
                   height={694}
                   unoptimized
+                  unselectable="on"
                 />
               </div>
             </div>
@@ -86,7 +87,6 @@ export default function Home() {
               FAQ
             </Link>
           </p>
-          <div className="mt-2 flex flex-row justify-center gap-2"></div>
         </div>
       </section>
       <Footer />

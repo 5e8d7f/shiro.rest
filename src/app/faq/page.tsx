@@ -26,7 +26,7 @@ export default function FAQ() {
         <p>
           Feel free to contact me on Telegram at
           <a
-            href={siteConfig.links.telegramSupport}
+            href={siteConfig.links.telegram}
             className="ml-1 mr-1 text-blue-400 hover:underline"
           >
             @YiordanoIgnacio
@@ -55,13 +55,11 @@ export default function FAQ() {
             onClick={() =>
               navigator.clipboard.writeText("/account transfer user: amount:")
             }
-            className="ml-1 cursor-pointer text-blue-400 hover:underline"
+            className="ml-1 mr-1 cursor-pointer text-blue-400 hover:underline"
           >
             /account transfer user: amount:
           </code>
-          , replacing <code>amount</code> with the number of credits you want to
-          transfer and <code>user</code> with the user ID of the person you want
-          to transfer the credits to.
+          in Discord.
         </p>
       ),
     },

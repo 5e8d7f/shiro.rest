@@ -11,8 +11,13 @@ export function Footer() {
   const contact = [
     {
       title: "Telegram",
-      href: siteConfig.links.telegramSupport,
-      icon: Icons.contact,
+      href: siteConfig.links.contact.telegram,
+      icon: Icons.telegram,
+    },
+    {
+      title: "Discord",
+      href: siteConfig.links.contact.discord,
+      icon: Icons.discord,
     },
   ]
 

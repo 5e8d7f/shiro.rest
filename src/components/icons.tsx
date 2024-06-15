@@ -1,16 +1,15 @@
-import { Discord } from "flowbite-react-icons/solid"
+import { FaDiscord, FaTelegram } from 'react-icons/fa'
 import {
-  ArrowLeft,
-  CheckCheck,
-  Contact,
-  Database,
-  Mail,
-  Moon,
-  ScanBarcode,
-  SunMedium,
-  User,
-  Users,
-} from "lucide-react"
+  LuArrowLeft,
+  LuCheck,
+  LuDatabase,
+  LuMail,
+  LuMoon,
+  LuSunMedium,
+  LuUser,
+  LuUsers,
+} from "react-icons/lu"
+import { IoIosBarcode } from "react-icons/io";
 
 type IconKeys = keyof typeof icons
 
@@ -19,17 +18,18 @@ type IconsType = {
 }
 
 const icons = {
-  sun: SunMedium,
-  moon: Moon,
-  discord: Discord,
-  user: User,
-  guild: Users,
-  left: ArrowLeft,
-  database: Database,
-  mail: Mail,
-  check: CheckCheck,
-  barcode: ScanBarcode,
-  contact: Contact,
+  sun: LuSunMedium,
+  moon: LuMoon,
+  discord: FaDiscord,
+  user: LuUser,
+  guild: LuUsers,
+  left: LuArrowLeft,
+  database: LuDatabase,
+  mail: LuMail,
+  check: LuCheck,
+  barcode: IoIosBarcode,
+  telegram: FaTelegram,
 }
 
 export const Icons: IconsType = icons
+
