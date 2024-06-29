@@ -62,7 +62,10 @@ export function Navbar() {
                 Add to Discord
               </Button>
             </DialogTrigger>
-            <DialogContent className="w-64">
+            {/* 
+              if small screen, do a small width, leave space for the dialog
+            */}
+            <DialogContent>
               <DialogHeader>
                 <DialogTitle>Authorization</DialogTitle>
               </DialogHeader>

@@ -1,0 +1,5 @@
+import million from "million/compiler";
+
+const nextConfig = {}
+
+export default million.next(nextConfig);

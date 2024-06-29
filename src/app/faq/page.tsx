@@ -51,14 +51,20 @@ export default function FAQ() {
         <p>
           Yes, you can transfer your credits to another user. To do so, you need
           to use the command
-          <code
+          <span
             onClick={() =>
               navigator.clipboard.writeText("/account transfer user: amount:")
             }
-            className="ml-1 mr-1 cursor-pointer text-blue-400 hover:underline"
+            onKeyDown={() =>
+              navigator.clipboard.writeText("/account transfer user: amount:")
+            }
+            onKeyUp={() =>
+              navigator.clipboard.writeText("/account transfer user: amount:")
+            }
+            className="ml-1 mr-1 cursor-pointer text-blue-400 hover:underline font-mono"
           >
             /account transfer user: amount:
-          </code>
+          </span>
           in Discord.
         </p>
       ),
@@ -69,6 +75,28 @@ export default function FAQ() {
     },
   ]
 
+  function numberToText(number: number) {
+    // 1 -> one, 2 -> two, 3 -> three, etc, if number isn't in the range, return mixed ones, like onetwinethree
+    const numberString = number.toString()
+    const numberMap: { [key: string]: string } = {
+      "0": "zero",
+      "1": "one",
+      "2": "two",
+      "3": "three",
+      "4": "four",
+      "5": "five",
+      "6": "six",
+      "7": "seven",
+      "8": "eight",
+      "9": "nine",
+    }
+
+    return numberString
+      .split("")
+      .map((digit) => numberMap[digit])
+      .join("")
+  }
+
   return (
     <main className="min-h-[80vh]">
       <Navbar />
@@ -77,7 +105,7 @@ export default function FAQ() {
       </h1>
       <Accordion type="single" className="container mx-auto max-w-[64rem]">
         {QnA.map((item, index) => (
-          <AccordionItem key={index} value={index.toString()}>
+          <AccordionItem key={numberToText(index)} value={index.toString()}>
             <AccordionTrigger>{item.question}</AccordionTrigger>
             <AccordionContent>
               <span className="text-muted-foreground">{item.answer}</span>

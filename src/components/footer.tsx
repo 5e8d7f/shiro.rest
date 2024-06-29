@@ -1,4 +1,4 @@
-import { ElementType } from "react"
+import type { ElementType } from "react"
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"

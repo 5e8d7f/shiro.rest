@@ -1,4 +1,5 @@
-import { FaDiscord, FaTelegram } from "react-icons/fa"
+import { FaDiscord, FaTelegram, } from "react-icons/fa"
+import { TbShoppingCartX, TbShoppingCart } from "react-icons/tb"
 import { IoIosBarcode } from "react-icons/io"
 import {
   LuArrowLeft,
@@ -9,6 +10,7 @@ import {
   LuSunMedium,
   LuUser,
   LuUsers,
+  LuLoader2
 } from "react-icons/lu"
 
 type IconKeys = keyof typeof icons
@@ -29,6 +31,9 @@ const icons = {
   check: LuCheck,
   barcode: IoIosBarcode,
   telegram: FaTelegram,
+  shoppingCart: TbShoppingCart,
+  invalidShoppingCart: TbShoppingCartX,
+  loading: LuLoader2,
 }
 
 export const Icons: IconsType = icons
