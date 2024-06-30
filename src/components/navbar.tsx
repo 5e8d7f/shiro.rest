@@ -77,80 +77,80 @@ export function Navbar() {
               </Link>
             ))}
           </nav>
-          <nav>
-            {isMobile ? (
-              <Drawer>
-                <DrawerTrigger asChild>
-                  <Button variant="outline">
-                    <Icons.discord className="mr-2 h-4 w-4" />
-                    Add to Discord
-                  </Button>
-                </DrawerTrigger>
-                <DrawerContent>
-                  <DrawerHeader>
-                    <DrawerTitle>Authorization</DrawerTitle>
-                  </DrawerHeader>
-                  <DrawerDescription className="text-center">
-                    Choose the type of installation you want to perform.
-                  </DrawerDescription>
-                  <DrawerFooter>
-                    {types.map((type) => (
-                      <Button
-                        key={type.title}
-                        variant="outline"
-                        className="mt-2 w-full"
-                        asChild
-                      >
-                        <Link href={type.link} prefetch={false}>
-                          {type.icon}
-                          <p className="ml-2 inline-block">{type.title}</p>
-                        </Link>
-                      </Button>
-                    ))}
-                    <DrawerClose asChild>
-                      <Button variant="outline" className="mt-2 w-full">
-                        <Icons.close className="mr-2 h-4 w-4" />
-                        Close
-                      </Button>
-                    </DrawerClose>
-                  </DrawerFooter>
-                </DrawerContent>
-              </Drawer>
-            ) : (
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button variant="outline">
-                    <Icons.discord className="mr-2 h-4 w-4" />
-                    Add to Discord
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Authorization</DialogTitle>
-                  </DialogHeader>
-                  <DialogDescription>
-                    Choose the type of installation you want to perform.
-                  </DialogDescription>
-                  <DialogFooter>
-                    {types.map((type) => (
-                      <Button
-                        key={type.title}
-                        variant="outline"
-                        className="mt-2 w-full"
-                        asChild
-                      >
-                        <Link href={type.link} prefetch={false}>
-                          {type.icon}
-                          <p className="ml-2 inline-block">{type.title}</p>
-                        </Link>
-                      </Button>
-                    ))}
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            )}
-          </nav>
         </div>
+        <nav>
+          {isMobile ? (
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button variant="outline">
+                  <Icons.discord className="mr-2 h-4 w-4" />
+                  Add to Discord
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle>Authorization</DrawerTitle>
+                </DrawerHeader>
+                <DrawerDescription className="text-center">
+                  Choose the type of installation you want to perform.
+                </DrawerDescription>
+                <DrawerFooter>
+                  {types.map((type) => (
+                    <Button
+                      key={type.title}
+                      variant="outline"
+                      className="mt-2 w-full"
+                      asChild
+                    >
+                      <Link href={type.link} prefetch={false}>
+                        {type.icon}
+                        <p className="ml-2 inline-block">{type.title}</p>
+                      </Link>
+                    </Button>
+                  ))}
+                  <DrawerClose asChild>
+                    <Button variant="outline" className="mt-2 w-full">
+                      <Icons.close className="mr-2 h-4 w-4" />
+                      Close
+                    </Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          ) : (
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">
+                  <Icons.discord className="mr-2 h-4 w-4" />
+                  Add to Discord
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Authorization</DialogTitle>
+                </DialogHeader>
+                <DialogDescription>
+                  Choose the type of installation you want to perform.
+                </DialogDescription>
+                <DialogFooter>
+                  {types.map((type) => (
+                    <Button
+                      key={type.title}
+                      variant="outline"
+                      className="mt-2 w-full"
+                      asChild
+                    >
+                      <Link href={type.link} prefetch={false}>
+                        {type.icon}
+                        <p className="ml-2 inline-block">{type.title}</p>
+                      </Link>
+                    </Button>
+                  ))}
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          )}
+        </nav>
       </div>
     </header>
   )
