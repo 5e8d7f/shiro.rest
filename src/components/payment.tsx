@@ -75,7 +75,7 @@ export function Payment() {
                 Purchase
               </Button>
             </DrawerTrigger>
-            <DrawerContent className="max-w-[20rem] p-6">
+            <DrawerContent>
               <DrawerHeader>
                 <DrawerTitle className="flex items-center">
                   <Icons.barcode className="mr-2 h-6 w-6" />
@@ -99,7 +99,7 @@ export function Payment() {
                 Purchase
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-h-[30rem] max-w-[20rem] p-6">
+            <DialogContent>
               <DialogHeader>
                 <DialogTitle className="flex items-center">
                   <Icons.barcode className="mr-2 h-6 w-6" />
