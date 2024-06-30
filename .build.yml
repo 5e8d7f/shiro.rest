@@ -1,6 +1,6 @@
 image: alpine/edge
 secrets:
-  - a60a3df4-1aeb-4663-b816-b7425fe69399
+  -  67cc5341-ef4b-4597-abab-abb3d9757529
 sources:
   - git@git.sr.ht/~igna/shiro.rest
 environment:
