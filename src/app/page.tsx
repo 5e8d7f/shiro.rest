@@ -7,10 +7,12 @@ import { Features } from "@/components/features"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { Payment } from "@/components/payment"
+import Particles from "@/components/ui/particles"
 
 export default function Home() {
   return (
-    <main className="min-h-[80vh]">
+    <main className="relative min-h-[80vh]">
+      <Particles className="absolute inset-0" />
       <Navbar />
       <section className="flex-grow animate-fade-in space-y-6 pt-6 pb-8 md:py-24 lg:py-16">
         <div className="container flex max-w-[64rem] flex-col items-start gap-2 text-start md:items-center md:text-center">

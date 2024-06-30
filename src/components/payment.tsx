@@ -35,7 +35,7 @@ import { useToast } from "@/components/ui/use-toast"
 export function Payment() {
   const [loading, setLoading] = useState(false)
   const [amount, setAmount] = useState(1000)
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [isMobile, setIsMobile] = useState(false)
   const { toast } = useToast()
 
   useEffect(() => {
@@ -122,8 +122,7 @@ export function Payment() {
                   placeholder="Amount"
                   value={amount}
                   onChange={(e) => {
-                    const value = Number(e.target.value)
-                    setAmount(value)
+                    setAmount(Number(e.target.value))
                   }}
                   className={`w-full ${isBelowMin || isAboveMax ? "border-red-500" : ""}`}
                 />
@@ -146,14 +145,14 @@ export function Payment() {
                   onClick={() => createPayment(amount)}
                   disabled={isBelowMin || isAboveMax}
                 >
-                  Proceed to payment
                   {loading ? (
-                    <Icons.loading className="ml-2 h-4 w-4 animate-spin" />
+                    <Icons.loading className="mr-2 h-4 w-4 animate-spin" />
                   ) : isBelowMin || isAboveMax ? (
-                    <Icons.invalidShoppingCart className="ml-2 h-4 w-4" />
+                    <Icons.invalidShoppingCart className="mr-2 h-4 w-4" />
                   ) : (
-                    <Icons.shoppingCart className="ml-2 h-4 w-4" />
+                    <Icons.shoppingCart className="mr-2 h-4 w-4" />
                   )}
+                  Proceed to payment
                 </Button>
               </DrawerFooter>
             </DrawerContent>
@@ -183,8 +182,7 @@ export function Payment() {
                   placeholder="Amount"
                   value={amount}
                   onChange={(e) => {
-                    const value = Number(e.target.value)
-                    setAmount(value)
+                    setAmount(Number(e.target.value))
                   }}
                   className={`w-full ${isBelowMin || isAboveMax ? "border-red-500" : ""}`}
                 />
@@ -209,14 +207,14 @@ export function Payment() {
                   onClick={() => createPayment(amount)}
                   disabled={isBelowMin || isAboveMax}
                 >
-                  Proceed to payment
                   {loading ? (
-                    <Icons.loading className="ml-2 h-4 w-4 animate-spin" />
+                    <Icons.loading className="mr-2 h-4 w-4 animate-spin" />
                   ) : isBelowMin || isAboveMax ? (
-                    <Icons.invalidShoppingCart className="ml-2 h-4 w-4" />
+                    <Icons.invalidShoppingCart className="mr-2 h-4 w-4" />
                   ) : (
-                    <Icons.shoppingCart className="ml-2 h-4 w-4" />
+                    <Icons.shoppingCart className="mr-2 h-4 w-4" />
                   )}
+                  Proceed to payment
                 </Button>
               </DialogFooter>
             </DialogContent>
