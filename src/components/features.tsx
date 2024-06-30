@@ -31,7 +31,7 @@ export function Features() {
   ]
 
   return (
-    <div className="mx-auto grid justify-center gap-4 md:max-w-[64rem] md:grid-cols-2">
+    <div className="mx-auto grid grid-cols-1 grid-cols-1 justify-center gap-4 lg:max-w-[64rem] lg:grid-cols-2">
       {cardData.map((card) => (
         <Card
           key={card.title}
