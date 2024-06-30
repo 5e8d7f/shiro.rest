@@ -23,5 +23,9 @@
       "quoteStyle": "double",
       "attributePosition": "auto"
     }
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "ignore": [".next"]
   }
 }

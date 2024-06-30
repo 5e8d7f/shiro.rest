@@ -9,6 +9,7 @@ import {
   LuSunMedium,
   LuUser,
   LuUsers,
+  LuX,
 } from "react-icons/lu"
 
 type IconKeys = keyof typeof icons
@@ -29,6 +30,7 @@ const icons = {
   check: LuCheck,
   barcode: IoIosBarcode,
   telegram: FaTelegram,
+  close: LuX,
 }
 
 export const Icons: IconsType = icons

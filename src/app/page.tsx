@@ -35,7 +35,6 @@ export default function Home() {
               }}
             >
               <BorderBeam colorFrom="#ffffff" colorTo="#ffffff" duration={5} />
-
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 <Image
                   src="/images/1st_day.gif"

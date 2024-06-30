@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Navbar } from "@/components/navbar"
+import { numberToText } from "@/lib/text"
 
 export default function FAQ() {
   const QnA = [
@@ -51,6 +52,7 @@ export default function FAQ() {
         <p>
           Yes, you can transfer your credits to another user. To do so, you need
           to use the command
+          {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
           <code
             onClick={() =>
               navigator.clipboard.writeText("/account transfer user: amount:")
@@ -77,7 +79,7 @@ export default function FAQ() {
       </h1>
       <Accordion type="single" className="container mx-auto max-w-[64rem]">
         {QnA.map((item, index) => (
-          <AccordionItem key={index} value={index.toString()}>
+          <AccordionItem key={numberToText(index)} value={index.toString()}>
             <AccordionTrigger>{item.question}</AccordionTrigger>
             <AccordionContent>
               <span className="text-muted-foreground">{item.answer}</span>
