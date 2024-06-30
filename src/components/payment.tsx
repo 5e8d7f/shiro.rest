@@ -33,18 +33,14 @@ import { creditsToAmount, isMaximalCredit, isMinimalCredit } from "@/lib/text"
 import { useToast } from "@/components/ui/use-toast"
 
 export function Payment() {
-  const [isMobile, setIsMobile] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [amount, setAmount] = useState(350)
-  const [isDisabled, setIsDisabled] = useState(true)
+  const [amount, setAmount] = useState(1000)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
   const { toast } = useToast()
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
 
-    handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -54,14 +50,14 @@ export function Payment() {
     "Pay only for what you use",
     "Full technical support",
   ]
-  const isBelowMin = !isMinimalCredit(amount)
   const isAboveMax = !isMaximalCredit(amount)
+  const isBelowMin = !isMinimalCredit(amount)
 
   function createPayment(amount: number): void {
     const issue = isBelowMin
-      ? "Minimum amount is $17.5 (350 credits)"
+      ? `Minimum amount is $${creditsToAmount(1000)}.00 (1000 credits)`
       : isAboveMax
-        ? "Maximum amount is $500 (10000 credits)"
+        ? `Maximum amount is $${creditsToAmount(5000)}.00 (5000 credits)`
         : null
     if (issue) {
       toast({
@@ -98,7 +94,7 @@ export function Payment() {
       </div>
       <div className="flex flex-col gap-4 text-center">
         <CardHeader className="flex flex-col items-center gap-2">
-          <CardTitle className="text-6xl">$0.05</CardTitle>
+          <CardTitle className="text-6xl">$0.01</CardTitle>
           <CardDescription className="text-sm">per credit</CardDescription>
         </CardHeader>
         {isMobile ? (
@@ -128,13 +124,14 @@ export function Payment() {
                   onChange={(e) => {
                     const value = Number(e.target.value)
                     setAmount(value)
-                    setIsDisabled(isBelowMin || isAboveMax)
                   }}
                   className={`w-full ${isBelowMin || isAboveMax ? "border-red-500" : ""}`}
                 />
                 <span className="w-full text-muted-foreground text-xs">
-                  {(isBelowMin && "Minimum amount is $17.5 (350 credits)") ||
-                    (isAboveMax && "Maximum amount is $500 (10000 credits)") ||
+                  {(isBelowMin &&
+                    `Minimum amount is $${creditsToAmount(1000)}.00 (1000)`) ||
+                    (isAboveMax &&
+                      `Maximum amount is $${creditsToAmount(5000)}.00 (5000)`) ||
                     `${amount} credits will cost you $${creditsToAmount(
                       amount
                     ).toFixed(2)}`}
@@ -188,13 +185,14 @@ export function Payment() {
                   onChange={(e) => {
                     const value = Number(e.target.value)
                     setAmount(value)
-                    setIsDisabled(isBelowMin || isAboveMax)
                   }}
                   className={`w-full ${isBelowMin || isAboveMax ? "border-red-500" : ""}`}
                 />
                 <span className="w-full text-muted-foreground text-xs">
-                  {(isBelowMin && "Minimum amount is $17.5 (350 credits)") ||
-                    (isAboveMax && "Maximum amount is $500 (10000 credits)") ||
+                  {(isBelowMin &&
+                    `Minimum amount is $${creditsToAmount(1000)}.00 (1000)`) ||
+                    (isAboveMax &&
+                      `Maximum amount is $${creditsToAmount(5000)}.00 (5000)`) ||
                     `${amount} credits will cost you $${creditsToAmount(
                       amount
                     ).toFixed(2)}`}
