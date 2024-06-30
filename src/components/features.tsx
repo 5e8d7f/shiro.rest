@@ -39,7 +39,7 @@ export function Features() {
           id="card"
         >
           <div className="flex h-[150px] flex-col justify-between rounded-md p-6">
-            <div className="flex flex-row items-center -space-x-4">
+            <div className="-space-x-4 flex flex-row items-center">
               {card.icon}
             </div>
             <CardHeader>

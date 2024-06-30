@@ -71,7 +71,7 @@ export function Navbar() {
               <Link
                 key={link.title}
                 href={link.href}
-                className="hidden items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:flex"
+                className="hidden items-center font-medium text-foreground/60 text-sm transition-colors hover:text-foreground/80 sm:flex"
               >
                 {link.title}
               </Link>
@@ -80,7 +80,7 @@ export function Navbar() {
           <nav>
             {isMobile ? (
               <Drawer>
-                <DrawerTrigger>
+                <DrawerTrigger asChild>
                   <Button variant="outline">
                     <Icons.discord className="mr-2 h-4 w-4" />
                     Add to Discord
@@ -107,7 +107,7 @@ export function Navbar() {
                         </Link>
                       </Button>
                     ))}
-                    <DrawerClose>
+                    <DrawerClose asChild>
                       <Button variant="outline" className="mt-2 w-full">
                         <Icons.close className="mr-2 h-4 w-4" />
                         Close

@@ -28,7 +28,7 @@ export default function FAQ() {
           Feel free to contact me on Telegram at
           <a
             href={siteConfig.links.contact.telegram}
-            className="ml-1 mr-1 text-blue-400 hover:underline"
+            className="mr-1 ml-1 text-blue-400 hover:underline"
           >
             @{siteConfig.links.contact.telegram.replace("https://t.me/", "")}
           </a>
@@ -57,7 +57,7 @@ export default function FAQ() {
             onClick={() =>
               navigator.clipboard.writeText("/account transfer user: amount:")
             }
-            className="ml-1 mr-1 cursor-pointer text-blue-400 hover:underline"
+            className="mr-1 ml-1 cursor-pointer text-blue-400 hover:underline"
           >
             /account transfer user: amount:
           </code>
@@ -74,7 +74,7 @@ export default function FAQ() {
   return (
     <main className="min-h-[80vh]">
       <Navbar />
-      <h1 className="py-8 text-center text-3xl font-bold md:text-4xl lg:text-5xl">
+      <h1 className="py-8 text-center font-bold text-3xl md:text-4xl lg:text-5xl">
         Frequently Asked Questions
       </h1>
       <Accordion type="single" className="container mx-auto max-w-[64rem]">

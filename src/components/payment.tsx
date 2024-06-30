@@ -11,6 +11,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -27,9 +28,16 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { Input } from "@/components/ui/input"
+import { creditsToAmount, isMaximalCredit, isMinimalCredit } from "@/lib/text"
+import { useToast } from "@/components/ui/use-toast"
 
 export function Payment() {
   const [isMobile, setIsMobile] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [amount, setAmount] = useState(350)
+  const [isDisabled, setIsDisabled] = useState(true)
+  const { toast } = useToast()
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,6 +54,32 @@ export function Payment() {
     "Pay only for what you use",
     "Full technical support",
   ]
+  const isBelowMin = !isMinimalCredit(amount)
+  const isAboveMax = !isMaximalCredit(amount)
+
+  function createPayment(amount: number): void {
+    const issue = isBelowMin
+      ? "Minimum amount is $17.5 (350 credits)"
+      : isAboveMax
+        ? "Maximum amount is $500 (10000 credits)"
+        : null
+    if (issue) {
+      toast({
+        title: "Error",
+        description: issue,
+      })
+      return
+    }
+
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      toast({
+        title: "Success",
+        description: `You have successfully purchased ${amount} credits`,
+      })
+    }, 2000)
+  }
 
   return (
     <Card className="grid w-full items-start gap-10 p-10 md:grid-cols-[1fr_200px]">
@@ -53,7 +87,7 @@ export function Payment() {
         <CardTitle className="text-xl sm:text-2xl">
           What&apos;s included
         </CardTitle>
-        <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+        <ul className="grid gap-3 text-muted-foreground text-sm sm:grid-cols-2">
           {whatsIncluded.map((item: string) => (
             <li key={item} className="flex items-center">
               <Icons.check className="mr-2 h-4 w-4" />
@@ -82,12 +116,48 @@ export function Payment() {
                   Purchase Shiro
                 </DrawerTitle>
               </DrawerHeader>
-              <DrawerDescription>
-                We are currently experiencing issues with our payment processor.
-                Please try again later.
+              <DrawerDescription className="text-center">
+                if you want to purchase shiro, you can do so by selecting one of
+                the options below.
               </DrawerDescription>
               <DrawerFooter>
-                <DrawerClose>Close</DrawerClose>
+                <Input
+                  type="number"
+                  placeholder="Amount"
+                  value={amount}
+                  onChange={(e) => {
+                    const value = Number(e.target.value)
+                    setAmount(value)
+                    setIsDisabled(isBelowMin || isAboveMax)
+                  }}
+                  className={`w-full ${isBelowMin || isAboveMax ? "border-red-500" : ""}`}
+                />
+                <span className="w-full text-muted-foreground text-xs">
+                  {(isBelowMin && "Minimum amount is $17.5 (350 credits)") ||
+                    (isAboveMax && "Maximum amount is $500 (10000 credits)") ||
+                    `${amount} credits will cost you $${creditsToAmount(
+                      amount
+                    ).toFixed(2)}`}
+                </span>
+                <Button
+                  variant="outline"
+                  className={
+                    isBelowMin || isAboveMax
+                      ? "disabled w-full text-red-500"
+                      : "w-full"
+                  }
+                  onClick={() => createPayment(amount)}
+                  disabled={isBelowMin || isAboveMax}
+                >
+                  Proceed to payment
+                  {loading ? (
+                    <Icons.loading className="ml-2 h-4 w-4 animate-spin" />
+                  ) : isBelowMin || isAboveMax ? (
+                    <Icons.invalidShoppingCart className="ml-2 h-4 w-4" />
+                  ) : (
+                    <Icons.shoppingCart className="ml-2 h-4 w-4" />
+                  )}
+                </Button>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
@@ -107,9 +177,50 @@ export function Payment() {
                 </DialogTitle>
               </DialogHeader>
               <DialogDescription>
-                We are currently experiencing issues with our payment processor.
-                Please try again later.
+                if you want to purchase shiro, you can do so by selecting one of
+                the options below.
               </DialogDescription>
+              <div className="flex flex-col gap-4">
+                <Input
+                  type="number"
+                  placeholder="Amount"
+                  value={amount}
+                  onChange={(e) => {
+                    const value = Number(e.target.value)
+                    setAmount(value)
+                    setIsDisabled(isBelowMin || isAboveMax)
+                  }}
+                  className={`w-full ${isBelowMin || isAboveMax ? "border-red-500" : ""}`}
+                />
+                <span className="w-full text-muted-foreground text-xs">
+                  {(isBelowMin && "Minimum amount is $17.5 (350 credits)") ||
+                    (isAboveMax && "Maximum amount is $500 (10000 credits)") ||
+                    `${amount} credits will cost you $${creditsToAmount(
+                      amount
+                    ).toFixed(2)}`}
+                </span>
+              </div>
+              <DialogFooter>
+                <Button
+                  variant="outline"
+                  className={
+                    isBelowMin || isAboveMax
+                      ? "disabled w-full text-red-500"
+                      : "w-full"
+                  }
+                  onClick={() => createPayment(amount)}
+                  disabled={isBelowMin || isAboveMax}
+                >
+                  Proceed to payment
+                  {loading ? (
+                    <Icons.loading className="ml-2 h-4 w-4 animate-spin" />
+                  ) : isBelowMin || isAboveMax ? (
+                    <Icons.invalidShoppingCart className="ml-2 h-4 w-4" />
+                  ) : (
+                    <Icons.shoppingCart className="ml-2 h-4 w-4" />
+                  )}
+                </Button>
+              </DialogFooter>
             </DialogContent>
           </Dialog>
         )}
