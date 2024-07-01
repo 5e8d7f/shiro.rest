@@ -8,8 +8,8 @@ services:
       - 3000
     networks:
       - shiro
-    env_file:
-      - .env
+    volumes:
+      - .env:/app/.env
 
 networks:
   shiro:
