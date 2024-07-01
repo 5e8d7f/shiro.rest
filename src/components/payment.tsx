@@ -68,13 +68,38 @@ export function Payment() {
     }
 
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      toast({
-        title: "Success",
-        description: `You have successfully purchased ${amount} credits`,
+    fetch("/api/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          toast({
+            title: "Error",
+            description: "We couldn't process your payment",
+          })
+        }
+        return response.json()
       })
-    }, 2000)
+      .then((data) => {
+        window.location.href = data.url
+        toast({
+          title: "Success",
+          description: "Redirecting to payment gateway",
+        })
+      })
+      .catch(() => {
+        toast({
+          title: "Error",
+          description: "Internal server error",
+        })
+        setLoading(false)
+      })
   }
 
   return (

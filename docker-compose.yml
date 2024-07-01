@@ -1,0 +1,18 @@
+services:
+  web:
+    container_name: web
+    hostname: web.shiro.local
+    build: .
+    restart: always
+    expose:
+      - 3000
+    environment:
+      - NODE_ENV=production
+    networks:
+      - shiro
+    env_file:
+      - .env
+
+networks:
+  shiro:
+    external: true

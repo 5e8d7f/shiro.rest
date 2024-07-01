@@ -19,7 +19,11 @@ export function numberToText(num: number): string {
 }
 
 export function creditsToAmount(credits: number): number {
-  return credits * 0.01
+  return credits * 0.01 // 100 credits = 1 USD
+}
+
+export function amountToCredits(amount: number): number {
+  return amount * 100 // 1 USD = 100 credits
 }
 
 export function isMinimalCredit(credits: number): boolean {
