@@ -6,5 +6,6 @@ COPY package.json bun.lockb ./
 RUN bun install
 
 COPY . .
+RUN bun run build --no-lint
 
 CMD ["bun", "run", "start"]
