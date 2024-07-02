@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   try {
     const [invoice] = await sql`
         SELECT
-            credits
+            amount
         FROM
             invoices
         WHERE
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       return Response.json({ message: "Invoice not found" }, { status: 404 })
     }
 
-    return Response.json({ credits: invoice.credits }, { status: 200 })
+    return Response.json({ credits: invoice.amount }, { status: 200 })
   } catch (error) {
     return Response.json({ message: "Internal server error" }, { status: 500 })
   }

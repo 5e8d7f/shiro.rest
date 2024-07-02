@@ -24,7 +24,7 @@ export default function Success({ params }: { params: { code: string } }) {
           }),
         })
         const data = await response.json()
-        setIsValid(data.success || false)
+        setIsValid(data.success)
       } catch (error) {
         console.error("Error fetching data:", error)
       } finally {

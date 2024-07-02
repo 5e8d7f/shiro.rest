@@ -14,12 +14,12 @@ export async function POST(request: Request) {
 
     await sql`
         INSERT INTO
-            invoices (code, credits)
+            invoices (code, amount)
         VALUES
             (${code}, ${credits})
         ON CONFLICT (code)
         DO UPDATE
-        SET credits = invoices.credits + ${credits}
+        SET credits = invoices.amount + ${credits}
     `
 
     console.log(`Added ${credits} credits to invoice ${code}`)
