@@ -21,8 +21,7 @@ export async function POST(request: Request) {
       amount: creditsToAmount(amount).toString(),
       currency: "USD",
       order_id: code,
-      url_callback:
-        "https://uh37mzy6508rlxciran4c18qvhrcnam1.femboys.rest/callback",
+      url_callback: "https://www.shiro.rip/api/callback",
       url_return: `https://www.shiro.rip/success/${code}`,
     })
 
